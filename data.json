@@ -1,0 +1,228 @@
+
+{
+  "config": {
+    "whatsappNumber": "6281234567890",
+    "email": "hello@nashstudio.com",
+    "instagram": "nashstudio.id",
+    "location": "Indonesia"
+  },
+  "sections": {
+    "work": {
+      "title": "Selected Work",
+      "desc": "Beberapa website dan eksperimen digital yang pernah saya kerjakan."
+    },
+    "services": {
+      "title": "What I Build",
+      "desc": "Setiap kebutuhan membutuhkan pendekatan yang berbeda. Berikut beberapa jenis website yang dapat saya kerjakan."
+    },
+    "process": {
+      "title": "From Idea to Website",
+      "desc": "Proses kerja dibuat sederhana agar kebutuhan proyek jelas sejak awal."
+    },
+    "about": {
+      "title": "A little about Nash Studio."
+    },
+    "pricing": {
+      "title": "A starting point for your project.",
+      "desc": "Setiap proyek memiliki kebutuhan berbeda. Berikut gambaran harga awal untuk membantu Anda menentukan pilihan."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions"
+    },
+    "contact": {
+      "title": "Have a project in mind?",
+      "desc": "Ceritakan sedikit tentang website yang ingin Anda buat. Kita bisa mulai dari kebutuhan yang paling sederhana."
+    }
+  },
+  "hero": {
+    "title": "Membangun website yang rapi, cepat, dan <span class=\"text-accent\">tepat guna.</span>",
+    "description": "Saya membantu Anda membuat website yang tidak cuma bagus dilihat, tapi benar-benar berguna dan sesuai dengan apa yang Anda butuhkan.",
+    "metaText": "INDEPENDENT WEB DEVELOPMENT STUDIO BASED IN INDONESIA\nAVAILABLE FOR SELECT PROJECTS"
+  },
+  "projects": [
+    {
+      "id": "p01",
+      "title": "De Donuts",
+      "category": "Food & Beverage",
+      "type": "Client Project",
+      "year": "2023",
+      "description": "Pembuatan website bisnis untuk UMKM kuliner lokal agar pelanggan mudah melihat katalog menu, promo terbaru, dan terhubung langsung via WhatsApp untuk pemesanan.",
+      "thumbnail": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=800",
+      "url": "https://example.com",
+      "features": [
+        "Katalog Menu",
+        "Integrasi WhatsApp",
+        "Mobile Responsive",
+        "Optimasi SEO Dasar"
+      ]
+    },
+    {
+      "id": "p02",
+      "title": "Nash Chat",
+      "category": "Social Experiment",
+      "type": "Personal Project",
+      "year": "2024",
+      "description": "Sebuah eksperimen aplikasi web chat sederhana untuk menguji komunikasi real-time antar pengguna dalam satu ruang lingkup lokal.",
+      "thumbnail": "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&q=80&w=800",
+      "url": "",
+      "features": [
+        "Real-time messaging",
+        "Anonymous mode",
+        "Custom Room"
+      ]
+    },
+    {
+      "id": "p03",
+      "title": "Marriage Phobia",
+      "category": "Research & Survey",
+      "type": "Concept Project",
+      "year": "2023",
+      "description": "Website interaktif untuk mengumpulkan data kuesioner seputar pandangan pernikahan. Menggunakan form bertahap yang ramah pengguna.",
+      "thumbnail": "https://images.unsplash.com/photo-1507676184212-d0330a1c5095?auto=format&fit=crop&q=80&w=800",
+      "url": "https://example.com",
+      "features": [
+        "Multi-step Form",
+        "Data Analytics Dashboard (Admin)",
+        "Responsive Design"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "Website Bisnis",
+      "desc": "Website untuk memperkenalkan bisnis, menampilkan produk atau layanan, dan memudahkan calon pelanggan menghubungi pemilik usaha."
+    },
+    {
+      "title": "Website Institusi",
+      "desc": "Website profil untuk sekolah, pesantren, organisasi, komunitas, atau lembaga lainnya dengan struktur informasi yang rapi."
+    },
+    {
+      "title": "Digital Invitation",
+      "desc": "Undangan digital interaktif untuk pernikahan, reuni, acara keluarga, dan berbagai kegiatan lainnya."
+    },
+    {
+      "title": "Web Application",
+      "desc": "Aplikasi berbasis website untuk kebutuhan tertentu, seperti pengelolaan data, formulir, dashboard, dan alat bantu digital sederhana."
+    },
+    {
+      "title": "Interactive Website",
+      "desc": "Website dengan fitur interaktif seperti kuis, kalkulator, sistem penilaian, simulasi, dan pengalaman digital lainnya."
+    },
+    {
+      "title": "Custom Development",
+      "desc": "Pengembangan website berdasarkan kebutuhan khusus yang belum tercakup dalam layanan standar di atas."
+    }
+  ],
+  "process": [
+    {
+      "title": "Discussion",
+      "desc": "Membahas tujuan website, kebutuhan, referensi desain, fitur, dan ruang lingkup pekerjaan secara detail."
+    },
+    {
+      "title": "Planning",
+      "desc": "Menyusun struktur halaman, alur penggunaan, dan pendekatan desain berdasarkan kebutuhan proyek."
+    },
+    {
+      "title": "Development",
+      "desc": "Mulai membangun website, mengimplementasikan fitur, serta melakukan pengecekan tampilan dan fungsi."
+    },
+    {
+      "title": "Delivery",
+      "desc": "Website diperiksa bersama klien, dilakukan revisi sesuai kesepakatan, kemudian diserahkan beserta panduan penggunaan."
+    }
+  ],
+  "about": {
+    "paragraphs": [
+      "<strong>Nash Studio</strong> adalah studio pengembangan website independen yang dikelola oleh seorang web developer.",
+      "Saya mengerjakan berbagai jenis website dengan pendekatan yang menyesuaikan kebutuhan proyek. Mulai dari website sederhana untuk bisnis hingga aplikasi web dengan fitur yang lebih khusus.",
+      "Bagi saya, website yang baik bukan hanya soal tampilannya. Website juga harus mudah dipahami, nyaman digunakan, dan memiliki tujuan yang jelas."
+    ],
+    "meta": [
+      {
+        "label": "Structure",
+        "value": "Independent Web Developer"
+      },
+      {
+        "label": "Location",
+        "value": "Based in Indonesia"
+      },
+      {
+        "label": "Focus",
+        "value": "Web Dev & Interactive Web"
+      },
+      {
+        "label": "Toolkit",
+        "value": "HTML, CSS, JS, Vercel, AI Tools",
+        "style": "font-size: 0.9375rem; font-family: var(--font-body);"
+      }
+    ]
+  },
+  "pricing": [
+    {
+      "title": "STARTER",
+      "price": "Mulai Rp199.000",
+      "ideal": "Cocok untuk personal website sederhana, landing page, atau website informasi dasar.",
+      "features": [
+        "Maksimal 1 halaman",
+        "Desain responsif",
+        "Informasi bisnis atau personal",
+        "Tombol WhatsApp",
+        "Penyesuaian warna dan tipografi"
+      ]
+    },
+    {
+      "title": "BUSINESS",
+      "price": "Mulai Rp499.000",
+      "ideal": "Cocok untuk UMKM, usaha jasa, katalog produk, atau profil lembaga sederhana.",
+      "features": [
+        "Maksimal 5 halaman",
+        "Desain yang disesuaikan",
+        "Galeri produk atau layanan",
+        "Tombol WhatsApp",
+        "Optimasi dasar SEO"
+      ]
+    },
+    {
+      "title": "PROFESSIONAL",
+      "price": "Mulai Rp899.000",
+      "ideal": "Cocok untuk website dengan fitur interaktif, organisasi, atau aplikasi web sederhana.",
+      "features": [
+        "Struktur dan fitur disesuaikan",
+        "Interaksi khusus",
+        "Formulir / integrasi data",
+        "Dashboard / fitur tambahan (opsional)",
+        "Pengujian responsivitas"
+      ]
+    },
+    {
+      "title": "CUSTOM PROJECT",
+      "price": "By Consultation",
+      "ideal": "Untuk kebutuhan yang membutuhkan fitur, integrasi, atau ruang lingkup khusus.",
+      "features": [
+        "Analisis kebutuhan mendalam",
+        "Arsitektur website khusus",
+        "Integrasi pihak ketiga (API)",
+        "Fungsionalitas kompleks",
+        "Dukungan dan maintenance"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Apakah saya bisa meminta website sesuai desain sendiri?",
+      "answer": "Bisa. Anda dapat memberikan referensi desain, contoh website, atau gambaran tampilan yang diinginkan. Saya akan mempelajarinya dan menyesuaikan desain dengan kebutuhan serta ruang lingkup proyek."
+    },
+    {
+      "question": "Apakah website dapat dibuka melalui HP?",
+      "answer": "Ya. Website dirancang secara responsif agar dapat digunakan dan tampil optimal melalui berbagai ukuran layar, termasuk smartphone, tablet, dan komputer."
+    },
+    {
+      "question": "Apakah domain dan hosting sudah termasuk?",
+      "answer": "Secara default, harga layanan fokus pada biaya pengembangan (development). Biaya domain dan hosting dikelola terpisah dan akan dibahas pada fase perencanaan. Untuk proyek statis sederhana, saya bisa membantu melakukan deployment gratis menggunakan Vercel atau GitHub Pages (tanpa custom domain)."
+    },
+    {
+      "question": "Berapa lama proses pengerjaan website?",
+      "answer": "Waktu pengerjaan sangat bergantung pada kompleksitas fitur dan kesiapan materi konten. Website sederhana biasanya memakan waktu 1–2 minggu, sementara proyek yang lebih kompleks bisa membutuhkan waktu 1 bulan atau lebih."
+    }
+  ]
+}
