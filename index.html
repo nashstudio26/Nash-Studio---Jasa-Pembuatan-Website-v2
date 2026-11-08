@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nash Studio — Independent Web Development Studio</title>
+    <meta name="description" content="Nash Studio membantu individu, bisnis, dan organisasi membangun website yang dirancang sesuai kebutuhan. Independent Web Development Studio based in Indonesia.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #FAF7F4;
+            --bg-alt: #FFFFFF;
+            --text-main: #1C1917; 
+            --text-sec: #78716C; 
+            
+            --accent: #FB5543; 
+            --accent-deep: #D9412B; 
+            --accent-hover: #BF3420; 
+            --accent-soft: #FFF1EE; 
+            
+            --border: #E7E2DC; 
+            
+            --footer-text: #A8A29E;
+            --footer-border: #44403C;
+            
+            --font-body: 'Instrument Sans', system-ui, sans-serif;
+            --font-display: 'Space Grotesk', system-ui, sans-serif;
+
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --section-padding: 3rem;
+        }
+
+        @media (max-width: 768px) { :root { --section-padding: 2rem; } }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; }
+        a { color: inherit; text-decoration: none; transition: var(--transition); }
+        ul { list-style: none; }
+        button, input, select, textarea { font-family: inherit; border: none; outline: none; background: none; }
+
+        .container { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        @media (max-width: 768px) { .container { padding: 0 1.25rem; } }
+
+        .text-accent { color: var(--accent); }
+        .text-sec { color: var(--text-sec); }
+        
+        .label {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-sec);
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1.5rem;
+            align-items: baseline;
+        }
+        @media (max-width: 768px) {
+            .section-header { grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 1.5rem; }
+        }
+
+        .section-title { font-size: 2rem; letter-spacing: -0.02em; }
+        .section-desc { font-size: 1rem; color: var(--text-sec); max-width: 500px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-family: var(--font-display);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .btn-primary { background-color: var(--accent-deep); color: #fff; border-color: var(--accent-deep); }
+        .btn-primary:hover { background-color: var(--accent-hover); border-color: var(--accent-hover); }
+
+        .btn-secondary { background-color: var(--text-main); color: var(--bg-main); border-color: var(--text-main); }
+        .btn-secondary:hover { background-color: var(--text-sec); border-color: var(--text-sec); }
+
+        .btn-outline:hover { background-color: var(--text-main); color: var(--bg-main); border-color: var(--text-main); }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 50; transition: var(--transition);
+            background-color: transparent;
+        }
+        nav.scrolled {
+            background-color: rgba(250, 247, 244, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            will-change: background-color, backdrop-filter;
+        }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; }
+        
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { font-size: 0.875rem; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-deep); }
+        
+        .menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background-color: var(--text-main); transition: var(--transition); }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute; top: 70px; left: 0; width: 100%;
+                background-color: var(--bg-alt); flex-direction: column;
+                padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border);
+                transform: translateY(-150%); opacity: 0; pointer-events: none;
+            }
+            .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+            .menu-toggle { display: flex; }
+            .menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+            .menu-toggle.open span:nth-child(2) { opacity: 0; }
+            .menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+        }
+
+        .hero {
+            padding-top: 130px;
+            padding-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .hero-title { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 1.5rem; max-width: 1000px; }
+        .hero-desc { font-size: clamp(1rem, 1.5vw, 1.25rem); color: var(--text-sec); max-width: 600px; margin-bottom: 2.5rem; line-height: 1.4; }
+        .hero-actions { display: flex; gap: 1rem; margin-bottom: 3rem; }
+
+        .hero-meta {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .hero-meta-text { max-width: 300px; }
+
+        .scroll-indicator { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0.5; }
+        .scroll-line { width: 1px; height: 40px; background-color: var(--text-main); animation: scrollDown 2s infinite; }
+        @keyframes scrollDown {
+            0% { transform: translateY(-10px) scaleY(0); transform-origin: top; }
+            50% { transform: translateY(0) scaleY(1); transform-origin: top; }
+            50.1% { transform-origin: bottom; }
+            100% { transform: translateY(10px) scaleY(0); transform-origin: bottom; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-actions { flex-direction: column; }
+            .hero-meta { flex-direction: column; align-items: flex-start; gap: 2rem; }
+            .scroll-indicator { display: none; }
+        }
+
+        .work-section { padding: var(--section-padding) 0; background-color: var(--bg-alt); }
+        .project-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+        .project-item { display: grid; grid-template-columns: 40px 3fr 2fr 2fr 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); cursor: pointer; transition: var(--transition); align-items: center; position: relative; }
+        .project-item:hover { background-color: var(--accent-soft); padding-left: 1rem; padding-right: 1rem; }
+        .project-item > * { font-size: 0.9375rem; }
+        .project-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; }
+        .project-item .label { color: var(--text-sec); }
+        .project-year { text-align: right; font-family: var(--font-display); }
+        .project-preview { position: absolute; right: 10%; top: 50%; transform: translateY(-50%) scale(0.9); width: 200px; height: 130px; background-color: var(--border); opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 10; background-size: cover; background-position: center; will-change: transform, opacity; }
+        .project-item:hover .project-preview { opacity: 1; transform: translateY(-50%) scale(1); }
+        @media (max-width: 1024px) { .project-item { grid-template-columns: 30px 1fr auto; } .project-item .p-cat, .project-item .p-type, .project-preview { display: none; } }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(28, 25, 23, 0.4); backdrop-filter: blur(4px); z-index: 100; display: flex; justify-content: flex-end; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-content { width: 100%; max-width: 600px; height: 100%; background-color: var(--bg-alt); padding: 4rem 2rem 2rem; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto; display: flex; flex-direction: column; }
+        .modal-overlay.active .modal-content { transform: translateX(0); }
+        .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem; }
+        .modal-close:hover { color: var(--accent-deep); }
+        .modal-thumbnail { width: 100%; height: 300px; background-color: var(--border); margin-bottom: 2rem; background-size: cover; background-position: center; }
+        .modal-header { margin-bottom: 2rem; }
+        .modal-title { font-size: 2rem; margin-bottom: 0.5rem; }
+        .modal-meta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .modal-meta span { padding: 0.25rem 0.75rem; border: 1px solid var(--border); font-size: 0.75rem; }
+        .modal-body h4 { font-size: 1rem; margin-bottom: 0.5rem; margin-top: 1.5rem; }
+        .modal-body p, .modal-body ul { color: var(--text-sec); font-size: 0.9375rem; margin-bottom: 1rem; }
+        .modal-body ul { padding-left: 1.5rem; list-style-type: square; }
+        .modal-footer { margin-top: auto; padding-top: 2rem; }
+
+        .services-section { padding: var(--section-padding) 0; }
+        .service-list { border-top: 1px solid var(--border); }
+        .service-item { padding: 1rem 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 40px 1.5fr 2fr auto; gap: 1rem; align-items: center; }
+        .service-num { font-family: var(--font-display); font-size: 1rem; color: var(--text-sec); }
+        .service-title { font-size: 1.125rem; font-weight: 500; }
+        .service-desc { color: var(--text-sec); font-size: 0.9375rem; line-height: 1.4; }
+        .service-link { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-deep); text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
+        
+        .process-section { padding: var(--section-padding) 0; background-color: var(--bg-alt); }
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+        .process-item { display: flex; flex-direction: column; }
+        .process-num { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--border); font-weight: 600; }
+        .process-title { font-size: 1.125rem; margin-bottom: 0.25rem; font-weight: 500; }
+        .process-desc { color: var(--text-sec); font-size: 0.875rem; line-height: 1.4; }
+
+        @media (max-width: 900px) {
+            .service-item { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.25rem 0; align-items: start; }
+            .process-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+        }
+
+        .about-section { padding: var(--section-padding) 0; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; }
+        .about-content { font-size: 1.125rem; color: var(--text-sec); line-height: 1.5; }
+        .about-content p { margin-bottom: 1rem; }
+        .about-content p strong { color: var(--text-main); font-weight: 500; }
+        .about-meta { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+        .meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+        .meta-value { font-family: var(--font-display); font-size: 0.9375rem; font-weight: 500; }
+
+        .pricing-section { padding: var(--section-padding) 0; background-color: var(--bg-alt); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--border); }
+        .pricing-card { padding: 1.5rem 1.25rem; display: flex; flex-direction: column; border-right: 1px solid var(--border); }
+        .pricing-card:last-child { border-right: none; }
+        .pricing-title { font-size: 1.125rem; margin-bottom: 0.25rem; }
+        .pricing-price { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1rem; }
+        .pricing-ideal { font-size: 0.8125rem; color: var(--text-sec); margin-bottom: 1.5rem; min-height: 40px;}
+        .pricing-features { margin-bottom: 2rem; flex-grow: 1; }
+        .pricing-features li { font-size: 0.8125rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); color: var(--text-sec); }
+        .pricing-features li:last-child { border-bottom: none; }
+        .pricing-note { margin-top: 2rem; font-size: 0.8125rem; color: var(--text-sec); max-width: 800px; }
+
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .about-meta { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); border: none;}
+            .pricing-card { border: 1px solid var(--border); margin-bottom: -1px; margin-right: -1px;}
+        }
+        @media (max-width: 640px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+        .faq-section { padding: var(--section-padding) 0; }
+        .faq-list { border-top: 1px solid var(--border); max-width: 900px; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-question { width: 100%; text-align: left; padding: 1rem 0; font-size: 1.125rem; font-family: var(--font-display); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-icon { font-size: 1.5rem; font-weight: 300; transition: transform 0.3s ease; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--accent); }
+        .faq-item.active .faq-question { color: var(--accent-deep); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-answer-inner { padding-bottom: 1rem; color: var(--text-sec); font-size: 1rem; line-height: 1.5; }
+
+        .contact-section { padding: var(--section-padding) 0; background-color: var(--bg-alt); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-group label { font-size: 0.875rem; font-weight: 500; }
+        .form-group label span { color: var(--text-sec); font-weight: 400; font-size: 0.75rem; margin-left: 0.5rem; }
+        .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); font-size: 0.9375rem; transition: var(--transition); background-color: var(--bg-main); }
+        .form-control:focus { border-color: var(--accent); background-color: var(--bg-alt); }
+        textarea.form-control { resize: vertical; min-height: 100px; }
+        .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+        .info-block { display: flex; flex-direction: column; gap: 0.25rem; }
+        .info-block a { font-family: var(--font-display); font-size: 1.125rem; }
+        .info-block a:hover { color: var(--accent-deep); }
+        @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .contact-info { order: -1; border-bottom: 1px solid var(--border); padding-bottom: 2rem; } }
+
+        footer { background-color: var(--text-main); color: var(--bg-main); padding: 3rem 0 1.5rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+        .footer-tagline { color: var(--footer-text); max-width: 300px; }
+        .footer-links h4 { font-size: 0.875rem; color: var(--footer-text); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .footer-links ul { display: flex; flex-direction: column; gap: 0.75rem; }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--footer-border); font-size: 0.875rem; color: var(--footer-text); }
+        .back-to-top { cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
+        .back-to-top:hover { color: #FFFFFF; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; } .footer-bottom { flex-direction: column; gap: 1rem; align-items: flex-start; } }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } .scroll-line { animation: none; } }
+        
+        #error-msg { display: none; background: #fee2e2; color: #b91c1c; padding: 1rem; text-align: center; font-size: 0.875rem; }
+    </style>
+</head>
+<body>
+    <div id="error-msg">Gagal memuat data. Jika Anda membuka file ini secara lokal, pastikan menggunakan Local Web Server untuk menghindari masalah CORS, atau unggah ke hosting Anda.</div>
+
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="logo">
+                <img src="https://lh3.googleusercontent.com/d/1YZA-kjAWRS4ZNNWRjSqYLQxZCq8TBqae" alt="Nash Studio" style="height: 38px; width: auto; object-fit: contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                <span style="display: none; font-family: var(--font-display); font-weight: 700; font-size: 1.5rem;">NASH STUDIO</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="btn btn-primary" style="color:white; border:none; padding: 0.5rem 1.25rem;">Let's Talk</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle" aria-label="Toggle Menu"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <header class="hero container" id="home">
+        <h1 class="hero-title reveal" id="heroTitle"></h1>
+        <p class="hero-desc reveal" id="heroDesc"></p>
+        
+        <div class="hero-actions reveal">
+            <a href="#work" class="btn btn-secondary">Lihat Karya</a>
+            <a href="#contact" class="btn btn-primary">Diskusikan Proyek</a>
+        </div>
+
+        <div class="hero-meta reveal">
+            <div class="label hero-meta-text" id="heroMetaText"></div>
+            <div class="scroll-indicator">
+                <span class="label">SCROLL</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="work-section" id="work">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" id="workTitle"></h2>
+                <p class="section-desc" id="workDesc"></p>
+            </div>
+            <div class="project-list reveal" id="projectList"></div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal()">Close <span>✕</span></div>
+            <div class="modal-thumbnail" id="modalThumb"></div>
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <div class="modal-meta" id="modalMeta"></div>
+            </div>
+            <div class="modal-body">
+                <p id="modalDesc"></p>
+                <h4>Fitur Utama:</h4>
+                <ul id="modalFeatures"></ul>
+            </div>
+            <div class="modal-footer">
+                <a href="#" target="_blank" class="btn btn-primary" id="modalVisit" style="width: 100%;">Visit Website</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" id="servicesTitle"></h2>
+                <p class="section-desc" id="servicesDesc"></p>
+            </div>
+            <div class="service-list reveal" id="serviceList"></div>
+        </div>
+    </section>
+
+    <section class="process-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="processTitle"></h2>
+                <p class="section-desc" id="processDesc"></p>
+            </div>
+            <div class="process-grid" id="processGrid"></div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid reveal">
+                <div><h2 class="section-title" id="aboutTitle"></h2></div>
+                <div class="about-content" id="aboutContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" id="pricingTitle"></h2>
+                <p class="section-desc" id="pricingDesc"></p>
+            </div>
+            <div class="pricing-grid reveal" id="pricingGrid"></div>
+            <div class="pricing-note reveal">
+                <p>* Harga di atas merupakan harga awal, bukan harga final untuk semua proyek. Biaya dapat berubah berdasarkan jumlah halaman, kompleksitas fitur, integrasi, dan kebutuhan lainnya.</p>
+                <p>* Domain, hosting, layanan pihak ketiga, serta biaya berlangganan eksternal tidak termasuk kecuali dinyatakan dalam penawaran.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" id="faqTitle"></h2>
+            </div>
+            <div class="faq-list reveal" id="faqList"></div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid reveal">
+                <div>
+                    <h2 class="section-title" id="contactTitle"></h2>
+                    <p class="section-desc" id="contactDesc" style="margin-bottom: 3rem;"></p>
+                    
+                    <form class="contact-form" id="waForm" onsubmit="sendWhatsApp(event)">
+                        <div class="form-group">
+                            <label for="c_name">Nama <span>*Wajib</span></label>
+                            <input type="text" id="c_name" class="form-control" required placeholder="Nama Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="c_business">Nama Bisnis / Organisasi <span>Opsional</span></label>
+                            <input type="text" id="c_business" class="form-control" placeholder="Nama entitas">
+                        </div>
+                        <div class="form-group">
+                            <label for="c_type">Jenis Website yang Dibutuhkan <span>*Wajib</span></label>
+                            <select id="c_type" class="form-control" required>
+                                <option value="" disabled selected>Pilih jenis website...</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: none;" id="packageWrapper">
+                            <label for="c_package">Paket yang Diminati <span>Opsional</span></label>
+                            <input type="text" id="c_package" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="c_desc">Gambaran Proyek <span>*Wajib</span></label>
+                            <textarea id="c_desc" class="form-control" required placeholder="Ceritakan singkat tujuan dan fitur utama yang diinginkan..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="c_budget">Perkiraan Anggaran <span>Opsional</span></label>
+                            <select id="c_budget" class="form-control">
+                                <option value="" disabled selected>Pilih rentang...</option>
+                                <option value="Di bawah Rp500.000">Di bawah Rp500.000</option>
+                                <option value="Rp500.000 – Rp1.000.000">Rp500.000 – Rp1.000.000</option>
+                                <option value="Rp1.000.000 – Rp2.000.000">Rp1.000.000 – Rp2.000.000</option>
+                                <option value="Rp2.000.000 – Rp5.000.000">Rp2.000.000 – Rp5.000.000</option>
+                                <option value="Di atas Rp5.000.000">Di atas Rp5.000.000</option>
+                                <option value="Ingin konsultasi terlebih dahulu">Ingin konsultasi terlebih dahulu</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: fit-content;">Kirim via WhatsApp</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-block"><span class="label">Email</span><a href="#" id="linkEmail"></a></div>
+                    <div class="info-block"><span class="label">WhatsApp</span><a href="#" id="linkWa" target="_blank"></a></div>
+                    <div class="info-block"><span class="label">Instagram</span><a href="#" id="linkIg" target="_blank"></a></div>
+                    <div class="info-block" style="margin-top: auto;">
+                        <span class="label">Location</span>
+                        <p style="font-family: var(--font-display); font-size: 1.25rem;" id="linkLoc"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="https://lh3.googleusercontent.com/d/1YZA-kjAWRS4ZNNWRjSqYLQxZCq8TBqae" alt="Nash Studio" style="height: 38px; width: auto; margin-bottom: 1rem; filter: brightness(0) invert(1);" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display: none; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: white;">NASH STUDIO</span>
+                    <p class="footer-tagline">Built with intention. Designed for real needs.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#" id="footWa" target="_blank">WhatsApp</a></li>
+                        <li><a href="#" id="footEmail">Email</a></li>
+                        <li><a href="#" id="footIg" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>&copy; <span id="currentYear"></span> Nash Studio. All rights reserved.</div>
+                <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to top ↑</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let db = {};
+        let projectsData = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('data.json')
+                .then(response => {
+                    if (!response.ok) throw new Error("Gagal mengambil data.json");
+                    return response.json();
+                })
+                .then(data => {
+                    db = data;
+                    renderSiteData();
+                    initInteractions();
+                    initScrollObserver();
+                })
+                .catch(error => {
+                    console.error("Error loading JSON:", error);
+                    document.getElementById('error-msg').style.display = 'block';
+                });
+        });
+
+        function renderSiteData() {
+            const waLink = `https://wa.me/${db.config.whatsappNumber}`;
+            const emailLink = `mailto:${db.config.email}`;
+            const igLink = `https://instagram.com/${db.config.instagram}`;
+            
+            document.getElementById('linkWa').href = waLink; document.getElementById('footWa').href = waLink;
+            document.getElementById('linkWa').textContent = `+${db.config.whatsappNumber}`;
+            
+            document.getElementById('linkEmail').href = emailLink; document.getElementById('footEmail').href = emailLink;
+            document.getElementById('linkEmail').textContent = db.config.email;
+            
+            document.getElementById('linkIg').href = igLink; document.getElementById('footIg').href = igLink;
+            document.getElementById('linkIg').textContent = `@${db.config.instagram}`;
+            
+            document.getElementById('linkLoc').textContent = db.config.location;
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            document.getElementById('heroTitle').innerHTML = db.hero.title;
+            document.getElementById('heroDesc').textContent = db.hero.description;
+            document.getElementById('heroMetaText').innerHTML = db.hero.metaText;
+
+            document.getElementById('workTitle').innerHTML = db.sections.work.title;
+            document.getElementById('workDesc').textContent = db.sections.work.desc;
+            
+            document.getElementById('servicesTitle').innerHTML = db.sections.services.title;
+            document.getElementById('servicesDesc').textContent = db.sections.services.desc;
+
+            document.getElementById('processTitle').innerHTML = db.sections.process.title;
+            document.getElementById('processDesc').textContent = db.sections.process.desc;
+
+            document.getElementById('aboutTitle').innerHTML = db.sections.about.title;
+            
+            document.getElementById('pricingTitle').innerHTML = db.sections.pricing.title;
+            document.getElementById('pricingDesc').textContent = db.sections.pricing.desc;
+
+            document.getElementById('faqTitle').innerHTML = db.sections.faq.title;
+
+            document.getElementById('contactTitle').innerHTML = db.sections.contact.title;
+            document.getElementById('contactDesc').textContent = db.sections.contact.desc;
+
+            projectsData = db.projects;
+            const projectList = document.getElementById('projectList');
+            db.projects.forEach((proj, i) => {
+                const num = (i + 1).toString().padStart(2, '0');
+                projectList.innerHTML += `
+                    <div class="project-item" onclick="openModal('${proj.id}')">
+                        <div class="label p-num">${num}</div>
+                        <div class="project-title">${proj.title}</div>
+                        <div class="label p-cat">${proj.category}</div>
+                        <div class="label p-type">${proj.type}</div>
+                        <div class="project-year">${proj.year}</div>
+                        <div class="project-preview" style="background-image: url('${proj.thumbnail}')"></div>
+                    </div>
+                `;
+            });
+
+            const serviceList = document.getElementById('serviceList');
+            const typeDropdown = document.getElementById('c_type');
+            db.services.forEach((srv, i) => {
+                const num = (i + 1).toString().padStart(2, '0');
+                serviceList.innerHTML += `
+                    <div class="service-item">
+                        <div class="service-num">${num}</div>
+                        <h3 class="service-title">${srv.title}</h3>
+                        <p class="service-desc">${srv.desc}</p>
+                        <a href="#contact" class="service-link" onclick="prefillForm('${srv.title}', '')">Discuss this service</a>
+                    </div>
+                `;
+                typeDropdown.innerHTML += `<option value="${srv.title}">${srv.title}</option>`;
+            });
+            typeDropdown.innerHTML += `<option value="Belum yakin">Belum yakin / Ingin konsultasi</option>`;
+
+            const processGrid = document.getElementById('processGrid');
+            db.process.forEach((prc, i) => {
+                const num = (i + 1).toString().padStart(2, '0');
+                processGrid.innerHTML += `
+                    <div class="process-item">
+                        <div class="process-num">${num}</div>
+                        <h3 class="process-title">${prc.title}</h3>
+                        <p class="process-desc">${prc.desc}</p>
+                    </div>
+                `;
+            });
+
+            const aboutContent = document.getElementById('aboutContent');
+            let aboutHtml = db.about.paragraphs.map(p => `<p>${p}</p>`).join('');
+            aboutHtml += `<div class="about-meta">` + db.about.meta.map(m => `
+                <div class="meta-item">
+                    <span class="label">${m.label}</span>
+                    <span class="meta-value" ${m.style ? `style="${m.style}"` : ''}>${m.value}</span>
+                </div>
+            `).join('') + `</div>`;
+            aboutContent.innerHTML = aboutHtml;
+
+            const pricingGrid = document.getElementById('pricingGrid');
+            db.pricing.forEach(pkg => {
+                const isCustom = pkg.title.toLowerCase().includes('custom');
+                const btnClass = isCustom ? 'btn-primary' : 'btn-outline';
+                const btnText = isCustom ? 'Request Consultation' : 'Discuss this package';
+                pricingGrid.innerHTML += `
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">${pkg.title}</h3>
+                        <div class="pricing-price">${pkg.price}</div>
+                        <div class="pricing-ideal">${pkg.ideal}</div>
+                        <ul class="pricing-features">
+                            ${pkg.features.map(f => `<li>${f}</li>`).join('')}
+                        </ul>
+                        <a href="#contact" class="btn ${btnClass}" onclick="prefillForm('', '${pkg.title}')">${btnText}</a>
+                    </div>
+                `;
+            });
+
+            const faqList = document.getElementById('faqList');
+            db.faq.forEach(f => {
+                faqList.innerHTML += `
+                    <div class="faq-item">
+                        <div class="faq-question">${f.question} <span class="faq-icon">+</span></div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">${f.answer}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            attachFaqListeners();
+        }
+
+        function initInteractions() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('open');
+                navLinks.classList.toggle('open');
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('open');
+                    navLinks.classList.remove('open');
+                });
+            });
+
+            document.getElementById('projectModal').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            const navbar = document.getElementById('navbar');
+            const sections = document.querySelectorAll('section, header');
+            const navItems = document.querySelectorAll('.nav-link');
+            
+            let isScrolling = false;
+            window.addEventListener('scroll', () => {
+                if (!isScrolling) {
+                    window.requestAnimationFrame(() => {
+                        if (window.scrollY > 50) navbar.classList.add('scrolled');
+                        else navbar.classList.remove('scrolled');
+
+                        let current = '';
+                        sections.forEach(section => {
+                            if (scrollY >= (section.offsetTop - 200)) current = section.getAttribute('id');
+                        });
+
+                        navItems.forEach(item => {
+                            item.classList.remove('active');
+                            if (item.getAttribute('href').includes(current)) item.classList.add('active');
+                        });
+                        isScrolling = false;
+                    });
+                    isScrolling = true;
+                }
+            });
+        }
+
+        function openModal(id) {
+            const proj = projectsData.find(p => p.id === id);
+            if(!proj) return;
+
+            document.getElementById('modalTitle').textContent = proj.title;
+            document.getElementById('modalThumb').style.backgroundImage = `url('${proj.thumbnail}')`;
+            document.getElementById('modalDesc').textContent = proj.description;
+            
+            document.getElementById('modalMeta').innerHTML = `
+                <span>${proj.category}</span>
+                <span>${proj.type}</span>
+                <span>${proj.year}</span>
+            `;
+
+            document.getElementById('modalFeatures').innerHTML = proj.features.map(f => `<li>${f}</li>`).join('');
+
+            const visitBtn = document.getElementById('modalVisit');
+            if (proj.url) {
+                visitBtn.style.display = 'block'; visitBtn.href = proj.url;
+            } else {
+                visitBtn.style.display = 'none';
+            }
+
+            document.getElementById('projectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function attachFaqListeners() {
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    const isActive = parent.classList.contains('active');
+                    
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+
+                    if (!isActive) {
+                        parent.classList.add('active');
+                        const answer = parent.querySelector('.faq-answer');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+        }
+
+        function initScrollObserver() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            reveals.forEach(element => observer.observe(element));
+        }
+
+        function prefillForm(type, pkg) {
+            const selectType = document.getElementById('c_type');
+            const inputPkg = document.getElementById('c_package');
+            const pkgWrapper = document.getElementById('packageWrapper');
+
+            if (type) {
+                for (let i = 0; i < selectType.options.length; i++) {
+                    if (selectType.options[i].value === type) { selectType.selectedIndex = i; break; }
+                }
+            }
+            if (pkg) {
+                pkgWrapper.style.display = 'flex'; inputPkg.value = pkg;
+            } else {
+                pkgWrapper.style.display = 'none'; inputPkg.value = '';
+            }
+        }
+
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('c_name').value.trim();
+            const business = document.getElementById('c_business').value.trim();
+            const type = document.getElementById('c_type').value;
+            const pkg = document.getElementById('c_package').value;
+            const desc = document.getElementById('c_desc').value.trim();
+            const budget = document.getElementById('c_budget').value;
+
+            let message = `Halo Nash Studio, saya ${name}`;
+            if (business) message += ` dari ${business}`;
+            message += `.\n\nSaya tertarik untuk membuat *${type}*`;
+            if (pkg) message += ` (Paket: ${pkg})`;
+            message += `.\n\n*Gambaran Proyek:*\n${desc}\n`;
+            if (budget) message += `\n*Perkiraan Anggaran:* ${budget}`;
+            message += `\n\nMohon informasi lebih lanjut. Terima kasih.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${db.config.whatsappNumber}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
