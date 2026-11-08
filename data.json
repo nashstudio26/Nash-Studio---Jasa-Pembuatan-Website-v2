@@ -1,9 +1,9 @@
 
 {
   "config": {
-    "whatsappNumber": "6281234567890",
-    "email": "hello@nashstudio.com",
-    "instagram": "nashstudio.id",
+    "whatsappNumber": "6285640366256",
+    "email": "nashrulnashrulloh24@gmail.com",
+    "instagram": "nashrulloh.nash",
     "location": "Indonesia"
   },
   "sections": {
@@ -35,55 +35,84 @@
     }
   },
   "hero": {
-    "title": "Membangun website yang rapi, cepat, dan <span class=\"text-accent\">tepat guna.</span>",
-    "description": "Saya membantu Anda membuat website yang tidak cuma bagus dilihat, tapi benar-benar berguna dan sesuai dengan apa yang Anda butuhkan.",
+    "title": "Merancang website yang berfokus pada <span class=\"text-accent\">fungsi dan kebutuhan.</span>",
+    "description": "Setiap proyek dimulai dengan memahami apa yang sebenarnya Anda perlukan, lalu mewujudkannya menjadi website yang terstruktur, cepat, dan mudah diakses.",
     "metaText": "INDEPENDENT WEB DEVELOPMENT STUDIO BASED IN INDONESIA\nAVAILABLE FOR SELECT PROJECTS"
   },
   "projects": [
     {
       "id": "p01",
-      "title": "De Donuts",
-      "category": "Food & Beverage",
-      "type": "Client Project",
-      "year": "2023",
-      "description": "Pembuatan website bisnis untuk UMKM kuliner lokal agar pelanggan mudah melihat katalog menu, promo terbaru, dan terhubung langsung via WhatsApp untuk pemesanan.",
-      "thumbnail": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=800",
-      "url": "https://example.com",
+      "title": "Undangan Reuni",
+      "category": "Event",
+      "type": "Digital Invitation",
+      "year": "2024",
+      "description": "Undangan digital interaktif untuk acara reuni. Dilengkapi dengan navigasi yang mulus, informasi detail acara, dan fitur konfirmasi kehadiran yang terstruktur.",
+      "thumbnail": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
+      "url": "https://undanganreuni-alumnibq.vercel.app/",
       "features": [
-        "Katalog Menu",
-        "Integrasi WhatsApp",
-        "Mobile Responsive",
-        "Optimasi SEO Dasar"
+        "Desain Responsif",
+        "Informasi Acara",
+        "Navigasi Halus"
       ]
     },
     {
       "id": "p02",
-      "title": "Nash Chat",
-      "category": "Social Experiment",
-      "type": "Personal Project",
+      "title": "SDN 1 Tasikhargo",
+      "category": "Education",
+      "type": "Website Institusi",
       "year": "2024",
-      "description": "Sebuah eksperimen aplikasi web chat sederhana untuk menguji komunikasi real-time antar pengguna dalam satu ruang lingkup lokal.",
-      "thumbnail": "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&q=80&w=800",
-      "url": "",
+      "description": "Website profil untuk SDN 1 Tasikhargo. Dirancang untuk memudahkan akses informasi sekolah bagi siswa, orang tua, dan masyarakat luas dengan tampilan yang bersih.",
+      "thumbnail": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800",
+      "url": "https://sdn1tasikhargo.vercel.app",
       "features": [
-        "Real-time messaging",
-        "Anonymous mode",
-        "Custom Room"
+        "Profil Institusi",
+        "Struktur Informasi Rapi",
+        "Aksesibilitas Tinggi"
       ]
     },
     {
       "id": "p03",
-      "title": "Marriage Phobia",
-      "category": "Research & Survey",
-      "type": "Concept Project",
-      "year": "2023",
-      "description": "Website interaktif untuk mengumpulkan data kuesioner seputar pandangan pernikahan. Menggunakan form bertahap yang ramah pengguna.",
-      "thumbnail": "https://images.unsplash.com/photo-1507676184212-d0330a1c5095?auto=format&fit=crop&q=80&w=800",
-      "url": "https://example.com",
+      "title": "Donies Solo",
+      "category": "Food & Beverage",
+      "type": "Website Bisnis",
+      "year": "2024",
+      "description": "Website katalog untuk produk Donies Solo. Mengutamakan kemudahan pelanggan dalam melihat varian menu dan melakukan pemesanan secara langsung.",
+      "thumbnail": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=800",
+      "url": "https://doniessolo.vercel.app",
       "features": [
-        "Multi-step Form",
-        "Data Analytics Dashboard (Admin)",
-        "Responsive Design"
+        "Katalog Produk",
+        "Mobile Friendly",
+        "UI Berfokus pada Produk"
+      ]
+    },
+    {
+      "id": "p04",
+      "title": "Laziez Donuts",
+      "category": "Food & Beverage",
+      "type": "Website Bisnis",
+      "year": "2024",
+      "description": "Halaman katalog untuk Laziez Donuts. Dibangun dengan layout minimalis agar fokus utama pengunjung tetap pada visual dan detail produk yang ditawarkan.",
+      "thumbnail": "https://images.unsplash.com/photo-1514517521153-1be72277b32f?auto=format&fit=crop&q=80&w=800",
+      "url": "https://katalog-laziezdonuts.vercel.app/",
+      "features": [
+        "Galeri Menu",
+        "Layout Bersih",
+        "Optimasi Performa"
+      ]
+    },
+    {
+      "id": "p05",
+      "title": "SMAN 54 Wonogiri",
+      "category": "Education",
+      "type": "Website Institusi",
+      "year": "2024",
+      "description": "Pengembangan konsep website institusi untuk tingkat sekolah menengah. Menitikberatkan pada arsitektur data agar pengumuman dan agenda sekolah mudah diakses.",
+      "thumbnail": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+      "url": "https://sman54wonogiri-contoh.vercel.app",
+      "features": [
+        "Sistem Pengumuman",
+        "Galeri Kegiatan",
+        "Desain Responsif Terstruktur"
       ]
     }
   ],
@@ -134,8 +163,7 @@
   "about": {
     "paragraphs": [
       "<strong>Nash Studio</strong> adalah studio pengembangan website independen yang dikelola oleh seorang web developer.",
-      "Saya mengerjakan berbagai jenis website dengan pendekatan yang menyesuaikan kebutuhan proyek. Mulai dari website sederhana untuk bisnis hingga aplikasi web dengan fitur yang lebih khusus.",
-      "Bagi saya, website yang baik bukan hanya soal tampilannya. Website juga harus mudah dipahami, nyaman digunakan, dan memiliki tujuan yang jelas."
+      "Saya mengerjakan berbagai jenis website dengan pendekatan yang menyesuaikan kebutuhan proyek. Mulai dari website sederhana untuk bisnis hingga aplikasi web dengan fitur yang lebih khusus."
     ],
     "meta": [
       {
@@ -149,11 +177,6 @@
       {
         "label": "Focus",
         "value": "Web Dev & Interactive Web"
-      },
-      {
-        "label": "Toolkit",
-        "value": "HTML, CSS, JS, Vercel, AI Tools",
-        "style": "font-size: 0.9375rem; font-family: var(--font-body);"
       }
     ]
   },
