@@ -9,7 +9,7 @@
   "sections": {
     "work": {
       "title": "Selected Work",
-      "desc": "Beberapa website dan eksperimen digital yang pernah saya kerjakan."
+      "desc": "Beberapa website yang pernah saya kerjakan."
     },
     "services": {
       "title": "What I Build",
@@ -20,7 +20,7 @@
       "desc": "Proses kerja dibuat sederhana agar kebutuhan proyek jelas sejak awal."
     },
     "about": {
-      "title": "A little about Nash Studio."
+      "title": "A little about\nNash Studio."
     },
     "pricing": {
       "title": "A starting point for your project.",
@@ -35,9 +35,9 @@
     }
   },
   "hero": {
-    "title": "Merancang website yang berfokus pada <span class=\"text-accent\">fungsi dan kebutuhan.</span>",
-    "description": "Setiap proyek dimulai dengan memahami apa yang sebenarnya Anda perlukan, lalu mewujudkannya menjadi website yang terstruktur, cepat, dan mudah diakses.",
-    "metaText": "INDEPENDENT WEB DEVELOPMENT STUDIO BASED IN INDONESIA\nAVAILABLE FOR SELECT PROJECTS"
+    "title": "Mewujudkan ide menjadi website yang <span class=\"text-accent\">profesional.</span>",
+    "description": "Saya merancang website yang benar-benar berfokus pada fungsi dan kebutuhan Anda, memberikan pengalaman digital yang mulus dan tepat sasaran.",
+    "metaText": "INDEPENDENT WEB DEVELOPMENT STUDIO BASED IN INDONESIA\n\nAVAILABLE FOR SELECT PROJECTS"
   },
   "projects": [
     {
@@ -47,7 +47,7 @@
       "type": "Digital Invitation",
       "year": "2024",
       "description": "Undangan digital interaktif untuk acara reuni. Dilengkapi dengan navigasi yang mulus, informasi detail acara, dan fitur konfirmasi kehadiran yang terstruktur.",
-      "thumbnail": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=800",
+      "thumbnail": "https://lh3.googleusercontent.com/d/1k3xgvwKD_UKmbGFHuLN7_yKBI-9k0J3u",
       "url": "https://undanganreuni-alumnibq.vercel.app/",
       "features": [
         "Desain Responsif",
@@ -62,7 +62,7 @@
       "type": "Website Institusi",
       "year": "2024",
       "description": "Website profil untuk SDN 1 Tasikhargo. Dirancang untuk memudahkan akses informasi sekolah bagi siswa, orang tua, dan masyarakat luas dengan tampilan yang bersih.",
-      "thumbnail": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=800",
+      "thumbnail": "https://lh3.googleusercontent.com/d/1XcNEl_5hkwAfUHJJfQFnYwOUlDIOt5AS",
       "url": "https://sdn1tasikhargo.vercel.app",
       "features": [
         "Profil Institusi",
@@ -77,7 +77,7 @@
       "type": "Website Bisnis",
       "year": "2024",
       "description": "Website katalog untuk produk Donies Solo. Mengutamakan kemudahan pelanggan dalam melihat varian menu dan melakukan pemesanan secara langsung.",
-      "thumbnail": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=800",
+      "thumbnail": "https://lh3.googleusercontent.com/d/17jHk9pnwHcoiPLUQvc9_IYe4YPcR3IuY",
       "url": "https://doniessolo.vercel.app",
       "features": [
         "Katalog Produk",
@@ -92,7 +92,7 @@
       "type": "Website Bisnis",
       "year": "2024",
       "description": "Halaman katalog untuk Laziez Donuts. Dibangun dengan layout minimalis agar fokus utama pengunjung tetap pada visual dan detail produk yang ditawarkan.",
-      "thumbnail": "https://images.unsplash.com/photo-1514517521153-1be72277b32f?auto=format&fit=crop&q=80&w=800",
+      "thumbnail": "https://lh3.googleusercontent.com/d/1J2QhG7CPOcUMXgp_5dmLf4kFajBr9UfK",
       "url": "https://katalog-laziezdonuts.vercel.app/",
       "features": [
         "Galeri Menu",
@@ -107,7 +107,7 @@
       "type": "Website Institusi",
       "year": "2024",
       "description": "Pengembangan konsep website institusi untuk tingkat sekolah menengah. Menitikberatkan pada arsitektur data agar pengumuman dan agenda sekolah mudah diakses.",
-      "thumbnail": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
+      "thumbnail": "https://lh3.googleusercontent.com/d/1si_fo-wue5ZpYz79LVmTqQqYcFM_2v59",
       "url": "https://sman54wonogiri-contoh.vercel.app",
       "features": [
         "Sistem Pengumuman",
@@ -183,7 +183,7 @@
   "pricing": [
     {
       "title": "STARTER",
-      "price": "Mulai Rp199.000",
+      "price": "Mulai Rp100.000",
       "ideal": "Cocok untuk personal website sederhana, landing page, atau website informasi dasar.",
       "features": [
         "Maksimal 1 halaman",
@@ -195,10 +195,9 @@
     },
     {
       "title": "BUSINESS",
-      "price": "Mulai Rp499.000",
+      "price": "Mulai Rp250.000",
       "ideal": "Cocok untuk UMKM, usaha jasa, katalog produk, atau profil lembaga sederhana.",
       "features": [
-        "Maksimal 5 halaman",
         "Desain yang disesuaikan",
         "Galeri produk atau layanan",
         "Tombol WhatsApp",
@@ -207,7 +206,7 @@
     },
     {
       "title": "PROFESSIONAL",
-      "price": "Mulai Rp899.000",
+      "price": "Mulai Rp500.000",
       "ideal": "Cocok untuk website dengan fitur interaktif, organisasi, atau aplikasi web sederhana.",
       "features": [
         "Struktur dan fitur disesuaikan",
@@ -224,7 +223,6 @@
       "features": [
         "Analisis kebutuhan mendalam",
         "Arsitektur website khusus",
-        "Integrasi pihak ketiga (API)",
         "Fungsionalitas kompleks",
         "Dukungan dan maintenance"
       ]
