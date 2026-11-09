@@ -20,7 +20,7 @@
       "desc": "Proses kerja dibuat sederhana agar kebutuhan proyek jelas sejak awal."
     },
     "about": {
-      "title": "A little about\nNash Studio."
+      "title": "A little about <span class=\"text-accent\">Nash Studio</span>""
     },
     "pricing": {
       "title": "A starting point for your project.",
