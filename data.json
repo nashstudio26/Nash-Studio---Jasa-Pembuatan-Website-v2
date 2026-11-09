@@ -198,6 +198,7 @@
       "price": "Mulai Rp250.000",
       "ideal": "Cocok untuk UMKM, usaha jasa, katalog produk, atau profil lembaga sederhana.",
       "features": [
+        "Semua fitur Starter"
         "Desain yang disesuaikan",
         "Galeri produk atau layanan",
         "Tombol WhatsApp",
@@ -209,6 +210,7 @@
       "price": "Mulai Rp500.000",
       "ideal": "Cocok untuk website dengan fitur interaktif, organisasi, atau aplikasi web sederhana.",
       "features": [
+        "Semua fitur starter"
         "Struktur dan fitur disesuaikan",
         "Interaksi khusus",
         "Formulir / integrasi data",
@@ -243,7 +245,7 @@
     },
     {
       "question": "Berapa lama proses pengerjaan website?",
-      "answer": "Waktu pengerjaan sangat bergantung pada kompleksitas fitur dan kesiapan materi konten. Website sederhana biasanya memakan waktu 1–2 minggu, sementara proyek yang lebih kompleks bisa membutuhkan waktu 1 bulan atau lebih."
+      "answer": "Waktu pengerjaan sangat bergantung pada kompleksitas fitur dan kesiapan materi konten. Website sederhana biasanya memakan waktu 3-7 hari (menyesuaikan), sementara proyek yang lebih kompleks mungkin membutuhkan waktu lebih dari 7 hari."
     }
   ]
 }
