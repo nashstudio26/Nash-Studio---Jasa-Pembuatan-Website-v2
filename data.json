@@ -1,3 +1,4 @@
+
 {
   "config": {
     "whatsappNumber": "6285640366256",
@@ -34,7 +35,7 @@
     }
   },
   "hero": {
-    "title": "Punya ide website tapi bingung mulai dari mana? <span class=\"text-accent\">Tenang!</span>",
+    "title": "Mewujudkan ide menjadi website yang <span class=\"text-accent\">profesional.</span>",
     "description": "Saya merancang website yang benar-benar berfokus pada fungsi dan kebutuhan Anda, memberikan pengalaman digital yang mulus dan tepat sasaran.",
     "metaText": "INDEPENDENT WEB DEVELOPMENT STUDIO BASED IN INDONESIA\n\nAVAILABLE FOR SELECT PROJECTS"
   },
@@ -197,7 +198,6 @@
       "price": "Mulai Rp250.000",
       "ideal": "Cocok untuk UMKM, usaha jasa, katalog produk, atau profil lembaga sederhana.",
       "features": [
-        "Semua fitur Starter"
         "Desain yang disesuaikan",
         "Galeri produk atau layanan",
         "Tombol WhatsApp",
@@ -209,7 +209,6 @@
       "price": "Mulai Rp500.000",
       "ideal": "Cocok untuk website dengan fitur interaktif, organisasi, atau aplikasi web sederhana.",
       "features": [
-        "Semua fitur starter"
         "Struktur dan fitur disesuaikan",
         "Interaksi khusus",
         "Formulir / integrasi data",
@@ -244,7 +243,7 @@
     },
     {
       "question": "Berapa lama proses pengerjaan website?",
-      "answer": "Waktu pengerjaan sangat bergantung pada kompleksitas fitur dan kesiapan materi konten. Website sederhana biasanya memakan waktu 3-7 hari (menyesuaikan), sementara proyek yang lebih kompleks mungkin membutuhkan waktu lebih dari 7 hari."
+      "answer": "Waktu pengerjaan sangat bergantung pada kompleksitas fitur dan kesiapan materi konten. Website sederhana biasanya memakan waktu 1–2 minggu, sementara proyek yang lebih kompleks bisa membutuhkan waktu 1 bulan atau lebih."
     }
   ]
 }
