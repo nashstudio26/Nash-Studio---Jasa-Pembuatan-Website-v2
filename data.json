@@ -36,16 +36,16 @@
   },
   "hero": {
     "title": "Punya ide website tapi bingung mulai dari mana? <span class=\"text-accent\">Tenang!</span>",
-    "description": "Saya merancang website yang benar-benar berfokus pada fungsi dan kebutuhan Anda, memberikan pengalaman digital yang mulus dan tepat sasaran.",
+    "description": "Saya merancang website yang benar-benar berfokus pada fungsi dan kebutuhan Anda",
     "metaText": "INDEPENDENT WEB DEVELOPMENT STUDIO BASED IN INDONESIA\n\nAVAILABLE FOR SELECT PROJECTS"
   },
   "projects": [
     {
       "id": "p01",
-      "title": "Undangan Reuni",
+      "title": "Undangan Digital",
       "category": "Event",
       "type": "Digital Invitation",
-      "year": "2024",
+      "year": "2026",
       "description": "Undangan digital interaktif untuk acara reuni. Dilengkapi dengan navigasi yang mulus, informasi detail acara, dan fitur konfirmasi kehadiran yang terstruktur.",
       "thumbnail": "https://lh3.googleusercontent.com/d/1k3xgvwKD_UKmbGFHuLN7_yKBI-9k0J3u",
       "url": "https://undanganreuni-alumnibq.vercel.app/",
@@ -60,7 +60,7 @@
       "title": "SDN 1 Tasikhargo",
       "category": "Education",
       "type": "Website Institusi",
-      "year": "2024",
+      "year": "2026",
       "description": "Website profil untuk SDN 1 Tasikhargo. Dirancang untuk memudahkan akses informasi sekolah bagi siswa, orang tua, dan masyarakat luas dengan tampilan yang bersih.",
       "thumbnail": "https://lh3.googleusercontent.com/d/1XcNEl_5hkwAfUHJJfQFnYwOUlDIOt5AS",
       "url": "https://sdn1tasikhargo.vercel.app",
@@ -75,7 +75,7 @@
       "title": "Donies Solo",
       "category": "Food & Beverage",
       "type": "Website Bisnis",
-      "year": "2024",
+      "year": "2026",
       "description": "Website katalog untuk produk Donies Solo. Mengutamakan kemudahan pelanggan dalam melihat varian menu dan melakukan pemesanan secara langsung.",
       "thumbnail": "https://lh3.googleusercontent.com/d/17jHk9pnwHcoiPLUQvc9_IYe4YPcR3IuY",
       "url": "https://doniessolo.vercel.app",
@@ -90,7 +90,7 @@
       "title": "Laziez Donuts",
       "category": "Food & Beverage",
       "type": "Website Bisnis",
-      "year": "2024",
+      "year": "2026",
       "description": "Halaman katalog untuk Laziez Donuts. Dibangun dengan layout minimalis agar fokus utama pengunjung tetap pada visual dan detail produk yang ditawarkan.",
       "thumbnail": "https://lh3.googleusercontent.com/d/1J2QhG7CPOcUMXgp_5dmLf4kFajBr9UfK",
       "url": "https://katalog-laziezdonuts.vercel.app/",
@@ -105,7 +105,7 @@
       "title": "SMAN 54 Wonogiri",
       "category": "Education",
       "type": "Website Institusi",
-      "year": "2024",
+      "year": "2026",
       "description": "Pengembangan konsep website institusi untuk tingkat sekolah menengah. Menitikberatkan pada arsitektur data agar pengumuman dan agenda sekolah mudah diakses.",
       "thumbnail": "https://lh3.googleusercontent.com/d/1si_fo-wue5ZpYz79LVmTqQqYcFM_2v59",
       "url": "https://sman54wonogiri-contoh.vercel.app",
@@ -162,8 +162,8 @@
   ],
   "about": {
     "paragraphs": [
-      "<strong>Nash Studio</strong> adalah studio pengembangan website independen yang dikelola oleh seorang web developer.",
-      "Saya mengerjakan berbagai jenis website dengan pendekatan yang menyesuaikan kebutuhan proyek. Mulai dari website sederhana untuk bisnis hingga aplikasi web dengan fitur yang lebih khusus."
+      "<strong>Nash Studio</strong> adalah studio pengembangan website independen yang dikelola oleh seorang web developer asal Wonogiri bernama Muhadzdzib Nashrulloh.",
+      "Saya mengerjakan berbagai jenis website dengan pendekatan yang menyesuaikan kebutuhan proyek. Mulai dari website sederhana untuk bisnis hingga aplikasi web dengan fitur custom."
     ],
     "meta": [
       {
@@ -239,11 +239,11 @@
     },
     {
       "question": "Apakah domain dan hosting sudah termasuk?",
-      "answer": "Secara default, harga layanan fokus pada biaya pengembangan (development). Biaya domain dan hosting dikelola terpisah dan akan dibahas pada fase perencanaan. Untuk proyek statis sederhana, saya bisa membantu melakukan deployment gratis menggunakan Vercel atau GitHub Pages (tanpa custom domain)."
+      "answer": "Secara default, harga layanan fokus pada biaya pengembangan (development). Biaya domain dan hosting dikelola terpisah dan akan dibahas pada fase perencanaan. Untuk proyek statis sederhana, saya bisa membantu melakukan deployment gratis menggunakan Vercel, Netlify, atau GitHub Pages (tanpa custom domain)."
     },
     {
       "question": "Berapa lama proses pengerjaan website?",
-      "answer": "Waktu pengerjaan sangat bergantung pada kompleksitas fitur dan kesiapan materi konten. Website sederhana biasanya memakan waktu 1–2 minggu, sementara proyek yang lebih kompleks bisa membutuhkan waktu 1 bulan atau lebih."
+      "answer": "Waktu pengerjaan sangat bergantung pada kompleksitas fitur dan kesiapan materi konten. Website sederhana biasanya memakan waktu 2-6 hari, sementara proyek yang lebih kompleks bisa membutuhkan waktu 1-2 minggu."
     }
   ]
 }
